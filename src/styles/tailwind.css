@@ -2,6 +2,22 @@
 
 @plugin '@tailwindcss/forms';
 
+/* Premium motion language with reduced-motion support. */
+@keyframes udine-rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes udine-drift { 0%, 100% { transform: translate3d(0, 0, 0) scale(1); } 50% { transform: translate3d(0, -8px, 0) scale(1.02); } }
+@keyframes udine-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgb(207 90 43 / .3); } 50% { box-shadow: 0 0 0 12px rgb(207 90 43 / 0); } }
+[data-template='udine-nordest'] .template-home > section { animation: udine-rise .75s cubic-bezier(.2,.8,.2,1) both; }
+[data-template='udine-nordest'] .template-home > section:nth-child(2) { animation-delay: .08s; }
+[data-template='udine-nordest'] .template-home > section:nth-child(3) { animation-delay: .16s; }
+[data-template='udine-nordest'] .template-home > section:nth-child(4) { animation-delay: .24s; }
+[data-template='udine-nordest'] .template-home > section:nth-child(5) { animation-delay: .32s; }
+[data-template='udine-nordest'] .template-home img { transition: transform .8s cubic-bezier(.2,.8,.2,1), filter .8s ease; }
+[data-template='udine-nordest'] .template-home img:hover { transform: scale(1.035); filter: saturate(1.08) contrast(1.04); }
+[data-template='udine-nordest'] .template-home a { transition: transform .25s ease, box-shadow .25s ease, color .25s ease, border-color .25s ease; }
+[data-template='udine-nordest'] .template-home a:hover { transform: translateY(-3px); }
+[data-template='udine-nordest'] .template-home section:first-child img { animation: udine-drift 8s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { [data-template='udine-nordest'] .template-home > section, [data-template='udine-nordest'] .template-home img, [data-template='udine-nordest'] .template-home a { animation: none !important; transition: none !important; } }
+
 @theme {
   --text-*: initial;
   --text-xs: 0.75rem;

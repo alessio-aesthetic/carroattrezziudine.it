@@ -2,12 +2,12 @@ export const site = {
   domain: 'carroattrezziudine.it',
   template: 'udine-nordest',
   description: 'Carroattrezzi a Udine e soccorso stradale 24 ore: recupero auto, traino, assistenza moto e trasporto veicoli in città e provincia.',
-  tel: 'mailto:assistenza@carroattrezziudine.it',
+  tel: '04321772099',
   city: 'Udine',
   name: 'Carroattrezzi Udine',
-  address: 'Udine e provincia',
+  address: 'Via Ivan Trinko, 14, 33100 Udine UD',
   title: 'Carroattrezzi Udine 24H | Soccorso stradale',
-  phone: 'Richiedi assistenza',
+  phone: '0432 177 2099',
   email: 'assistenza@carroattrezziudine.it',
 } as const
 
