@@ -1,4 +1,4 @@
-name: Build static site
+name: Deploy website
 
 on:
   push:
@@ -6,7 +6,13 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -19,10 +25,12 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      - name: Publish website
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
-          publish_branch: gh-pages
-          force_orphan: true
+          path: ./out
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4
