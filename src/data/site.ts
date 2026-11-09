@@ -5,7 +5,6 @@ export const site = {
   tel: '04321772099',
   city: 'Udine',
   name: 'Carroattrezzi Udine',
-  address: 'Via Ivan Trinko, 14, 33100 Udine UD',
   title: 'Carroattrezzi Udine 24H | Soccorso stradale',
   phone: '0432 177 2099',
   email: 'assistenza@carroattrezziudine.it',
